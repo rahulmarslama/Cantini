@@ -1,0 +1,41 @@
+﻿@using Cantini.Database.Model
+
+@model Student
+
+<form method="post">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Create Student</h2>
+			<hr />
+		</div>
+		
+		@*<div asp-validation-summary="All"></div>*@
+		<div class="mb-3">
+			<label asp-for="SName">Student Name</label>
+			<input asp-for="SName" class="form-control" />
+			<span asp-validation-for="SName" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="SEmail">Email Address</label>
+			<input asp-for="SEmail" class="form-control" />
+			<span asp-validation-for="SEmail" class="text-danger"></span>
+		</div>
+		
+		<div class="mb-3">
+			<label asp-for="Faculty">Faculty Name</label>
+			<input asp-for="Faculty" class="form-control" />
+			<span asp-validation-for="Faculty" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Create</button>
+		<a asp-controller="Student" asp-action="Index" class="btn btn-secondary" style="width:150px">
+			Back to List
+		</a>
+	</div>
+</form>
+
+
+@section Scripts{
+	@{
+		<partial name="_ValidationScriptsPartial" />
+	}
+}
